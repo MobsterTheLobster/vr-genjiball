@@ -8,6 +8,6 @@ func _ready() -> void:
 		
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		
-		get_viewport().user_xr = true
+		get_viewport().use_xr = true
 	else:
 		print("did not work. where headset?")
