@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckrna78bxo74i"]
+[gd_scene load_steps=5 format=3 uid="uid://ckrna78bxo74i"]
 
 [ext_resource type="Script" uid="uid://dv8n4d57u038s" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b1mai0sq47l0o" path="res://models/hand.blend" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://ovsb7lw486kh" path="res://models/sword.blend" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cuhnw15rhr57l" path="res://models/head.blend" id="4_iywne"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_uwrxv")
@@ -24,3 +26,13 @@ tracker = &"right_hand"
 
 [node name="hand" parent="XROrigin3D/RightHand" instance=ExtResource("2_yqjtg")]
 transform = Transform3D(4.371139e-08, -8.742278e-08, -1, -3.821371e-15, -1, 8.742278e-08, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="sword" parent="XROrigin3D/RightHand" instance=ExtResource("3_lbhrr")]
+transform = Transform3D(1, 4.371139e-08, -1.59578e-37, -7.301438e-30, 1.9106857e-15, 1, 4.371139e-08, -1, 1.9106855e-15, 0, 0, 0)
+
+[node name="Head" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+tracker = &"head"
+
+[node name="head" parent="XROrigin3D/Head" instance=ExtResource("4_iywne")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
